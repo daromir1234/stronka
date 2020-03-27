@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Szkoła ponadgimnazjalna</title>
+	<link rel="stylesheet" href="styl.css" type="text/css">
+</head>
+
+<body>
+
+	<div id="baner">
+		<h1>Projekt strony internetowej szkoły ponadgimnazjalnej</h1>
+	</div>
+	
+	<div id="panel_lewy">
+		<table>
+		
+			<tr>
+				<td>Treść zapytania</td>
+				<td width="405px">Zrzut ekranu</td>
+			</tr>
+			
+			<tr>
+				<td>INSERT INTO `klasa`(`id`, `nazwa`) VALUES (5, '3a')</td>
+				<td><img src="kwerenda1.jpg" alt="kwerenda1.jpg"></td>
+			</tr>
+			
+			<tr>
+				<td>SELECT klasa.nazwa, AVG(uczen.Srednia_ocen) AS 'Srednia_ocen' FROM klasa, uczen WHERE klasa.id=uczen.id_klasy Group BY klasa.nazwa</td>
+				<td><img src="kwerenda2.jpg" alt="kwerenda2.jpg"></td>
+			</tr>
+			
+			<tr>
+				<td>CREATE USER 'Dyrektor'@'localhost' IDENTIFIED BY 'dyr_123'</td>
+				<td><img src="nowy_uzytkownik.jpg" alt="nowy_uzytkownik.jpg"></td>
+			</tr>
+			
+			<tr>
+				<td>GRANT ALL PRIVILEGES ON szkola . * TO 'Dyrektor'@'localhost'</td>
+				<td><img src="uprawnienia.jpg" alt="uprawnienia.jpg"></td>
+			</tr>
+			
+			</table>
+	</div>
+	
+	<div id="panel_prawy">
+		<h1>Nowy nagłówek</h1>
+		<h2>Do pobrania</h2>
+		<ul>
+			<li><a href="../baza/kwerendy.txt">zapytania SQL</a></li>
+			<li><a href="../baza/szkola_nowa.sql">baza danych</a></li>
+		</ul>
+		<hr id="linia">
+		<h3>Wyznaczanie najniższej średniej</h3>
+		<h3>Albo i nie</h3>
+		
+		<ul>
+			<li>Polak <input type="text" id="pole1"></li>
+			<li>Nowak <input type="text" id="pole2"></li>
+			<li>Rysik <input type="text" id="pole3"></li>
+		</ul>
+		<input type="submit" value="wyznacz" onclick="wyznacz()">
+		<h3>Najniższa średnia:</h3>
+		<div id="wynik"></div>
+	</div>
+	
+	<div id="stopka">
+		<h3>stronę wykonał: Dariusz Śliwa</h3>
+	</div>
+	
+	<script>
+	
+		function wyznacz(){
+			var pole1= document.getElementById("pole1").value;
+			var pole2= document.getElementById("pole2").value;
+			var pole3= document.getElementById("pole3").value;
+			
+			if(isNaN(pole1) || isNaN(pole2) || isNaN(pole3) || pole1=="" || pole2=="" || pole3==""){
+				alert("Proszę uzupełnić wszystkie pola liczbami!");
+			}
+			
+			else{
+				var pole1= parseFloat(pole1);
+				var pole2= parseFloat(pole2);
+				var pole3= parseFloat(pole3);
+				
+				var min=Math.min(pole1,pole2, pole3);
+				
+				document.getElementById("wynik").innerHTML = min;
+			}
+		}
+	
+	</script>
+</body>
+</html>

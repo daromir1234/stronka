@@ -1,0 +1,53 @@
+a{
+	color: green;
+	font-family: Verdana;
+}
+
+#baner{
+	background-color: #5957a1;
+	text-align: center;
+	padding: 10px;
+	height: 70px;
+}
+
+#panel_lewy{
+	background-color: #bbadcd;
+	float: left;
+	width: 65%;
+	height: 450px;
+	overflow: scroll;
+}
+
+#panel_prawy{
+	background-color: #5957a1;
+	float: left;
+	text-align: center;
+	width: 35%;
+	height: 450px;
+}
+
+#stopka{
+	background-color: #5957a1;
+	text-align: center;
+	clear: both;
+	height: 50px;
+}
+
+#linia{
+	background: yellow;
+	height: 1px;
+	border: 2px;
+}
+
+body{
+	font-family: Arial;
+	color: white;
+}
+
+ul{
+	list-style-type: square;
+}
+
+table{
+	border: black dashed 1px;
+}
